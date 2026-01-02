@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jia Xuan & Yi Qi - Wedding Invitation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #b76e79; /* Rose Gold */
+            --secondary-color: #f4e1e3; /* Blush Pink */
+            --text-color: #4a4a4a;
+            --bg-color: #ffffff;
+            --font-script: 'Great Vibes', cursive;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Placeholder Image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-script);
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .time-box label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-script);
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Couple Section */
+        .couple-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .person {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .person h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        /* Event Details */
+        .details {
+            background-color: var(--secondary-color);
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* RSVP Form */
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-body);
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #9e5b65;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .section-title { font-size: 2.5rem; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#couple">The Couple</a>
+        <a href="#details">Events</a>
+        <a href="#rsvp">RSVP</a>
+    </nav>
+
+    <header id="home" class="hero">
+        <p>We are getting married</p>
+        <h1>Jia Xuan & Yi Qi</h1>
+        <p>December 20, 2026</p> <div class="countdown" id="countdown">
+            <div class="time-box"><span id="days">00</span><label>Days</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Secs</label></div>
+        </div>
+    </header>
+
+    <section id="couple">
+        <h2 class="section-title">The Happy Couple</h2>
+        <div class="couple-container">
+            <div class="person">
+                <h3>Lee Jia Xuan</h3>
+                <p>"I can't wait to spend the rest of my life with my best friend. Yi Qi brings so much joy and laughter into my world every single day."</p>
+            </div>
+            <div class="person">
+                <h3>Tan Yi Qi</h3>
+                <p>"From the moment we met, I knew this was special. Jia Xuan is my rock, my partner, and my greatest adventure."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="details">
+        <h2 class="section-title">Wedding Details</h2>
+        <p>We can't wait to celebrate with you.</p>
+        
+        <div class="event-grid">
+            <div class="card">
+                <h3>The Ceremony</h3>
+                <p><strong>Date:</strong> Sunday, Dec 20, 2026</p>
+                <p><strong>Time:</strong> 10:00 AM</p>
+                <p><strong>Venue:</strong> St. George's Church</p>
+                <p>Penang, Malaysia</p>
+            </div>
+            <div class="card">
+                <h3>The Reception</h3>
+                <p><strong>Date:</strong> Sunday, Dec 20, 2026</p>
+                <p><strong>Time:</strong> 7:00 PM</p>
+                <p><strong>Venue:</strong> The Grand Ballroom, E&O Hotel</p>
+                <p>Penang, Malaysia</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp">
+        <h2 class="section-title">RSVP</h2>
+        <p>Please confirm your attendance by November 20, 2026</p>
+        <br>
+        
+        <form class="rsvp-form" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" required placeholder="Full Name">
+            </div>
+            
+            <div class="form-group">
+                <label>Will you attend?</label>
+                <select>
+                    <option value="attending">Joyfully Accepts</option>
+                    <option value="declining">Regretfully Declines</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Number of Guests</label>
+                <input type="number" min="1" max="5" value="1">
+            </div>
+
+            <div class="form-group">
+                <label>Dietary Requirements / Message</label>
+                <textarea rows="4" placeholder="Vegetarian, allergies, or a nice message for us!"></textarea>
+            </div>
+
+            <button type="submit">Send RSVP</button>
+        </form>
+    </section>
+
+    <footer>
+        <h2>#JiaXuanYiQi2026</h2>
+        <p>Thank you for being part of our journey.</p>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION: SET WEDDING DATE HERE ---
+        const weddingDate = new Date("Dec 20, 2026 10:00:00").getTime();
+
+        // Countdown Timer Logic
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h2>The Big Day is Here!</h2>";
+            }
+        }, 1000);
+
+        // Simple Form Alert (Since there is no backend connected)
+        function submitForm(e) {
+            e.preventDefault();
+            alert("Thank you! Your RSVP has been noted (this is a demo).");
+        }
+    </script>
+</body>
+</html>
